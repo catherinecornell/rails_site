@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<br>
+<div style = "width : 100%;">
+<div class = "box"> 
+	<br>
+	Number of Active Restaurants:
+	<br>
+	<%= @countrestaurants %></div>
+
+<div class = "box"> 
+	<br>
+ 	Subscription Fees collected this month:
+	<br> $<%= @subscriptions%>.00 </div>
+<div class = "box"> 
+	<br>
+	Percent of Subscription Payments declined:
+	<br>
+	<%= @successpercent %>%</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+<h2>Venue's Payments</h2>
+    <div id="chart-payments" style="height: 300px;"></div>
+    <script>
+      new Chartkick.LineChart("chart-payments", <%= @sumpayments %>, {"colors": ["#EEAA00", "#494949"]});
+    </script>
+</div>
+<br>
+<div class="container-fluid">
+<h2>Number of Checks Created</h2>
+    <div id="chart-checks" style="height: 300px;"></div>
+    <script>
+      new Chartkick.LineChart("chart-checks", <%= @checkcounts  %>, {"colors": ["#EEAA00", "#494949"], "fontfamily" : ["BreadcrumbBold"]});
+    </script>
+</div>
+
+
+
+
